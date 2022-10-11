@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		//your code here
+                Scanner sc= new Scanner(System.in);
+                String s=sc.nextLine();
+                s=s+" "; //adding an extra space to the entered string so that last word gets count. if we don't add the space at the last, word will not get counted 
+                String large="", cur="";
+                for(int i=0;i<s.length();i++){
+                        if(s.charAt(i)!=' '){ //we will keep adding to the current word until we encounter space(" ") 
+                                cur+=s.charAt(i);
+                        }
+                        else{
+                                if (cur.length()>large.length()){
+                                        large=cur;
+                                }
+                                cur="";
+                        }
+                }
+                System.out.print(large);
+               
+	}
+}
