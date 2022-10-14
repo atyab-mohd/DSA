@@ -20,9 +20,18 @@ class Solution
             else c2++;
         }
         int k=0;
-        for(int i=0;i<c0;i++) a[k++]=0;
-        for(int i=0;i<c1;i++) a[k++]=1;
-        for(int i=0;i<c2;i++) a[k++]=2;
+        // for(int i=0;i<c0;i++) a[k++]=0;
+        // for(int i=0;i<c1;i++) a[k++]=1;
+        // for(int i=0;i<c2;i++) a[k++]=2;
+        for(int i=0;i<c0;i++){
+            a[i]=0;
+        }
+        for(int i=c0;i<c0+c1;i++){
+            a[i]=1;
+        }
+        for(int i=c0+c1;i<a.length;i++){
+            a[i]=2;
+        }
     }
 }
 
