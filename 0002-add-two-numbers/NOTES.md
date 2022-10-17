@@ -1,1 +1,2 @@
-​
+* WORST TIME COMPLEXITY IS:- O(max(n1,n2)) [it's either be n1 or n2 the reason is we have to traverse completely through the linked list having more no. of nodes(larger one)]
+* space complexity will be:- o(n) we are creating an extra linked list which will carry the submission of the two given linked list given
