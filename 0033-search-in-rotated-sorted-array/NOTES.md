@@ -1,1 +1,3 @@
-​
+* This is quite a good problem in this problem to search an index of an integer first i'm finding the min integer present in an array so that i can break this rotated array into two sub-arrays. After which the problem will become quite easy we will just use the binary search in both the sub-arrays which are sorted and strickly increasing and we will just return the index of the integer we have to find.
+* I made the function name 'binarySearch' so that i don't have to write the same approach again for two subarrays
+* **//TIME COMPLEXITY IS:- O(log n)**
