@@ -1,0 +1,2 @@
+itreating through the array from the end as we have increment the number (means we have to add just 1 to the last element of the array) we will just increment the value if the last digit is smaller than 9, else if the the element is 9 we have to change it by 0 and increment the next element (eg. [8,9]+1= [9,0]).
+EDGE CASE:- if the array contains only 9's as it's elements then we have to create the new array who's size will be 1 more than the previous one(1+n) and put it's 0th element as 1 and return it. (eg. [9,9,9]+1 ->[1,0,0,0])
