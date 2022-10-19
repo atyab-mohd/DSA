@@ -43,7 +43,6 @@ class Solution {
             else if(arr[mid]==k){
                 return mid;
             }
-                
         }
         return -1;
     }
