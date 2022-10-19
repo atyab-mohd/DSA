@@ -11,6 +11,6 @@ class Solution {
             if(arr[mid]==target)
                 return mid;
         }
-        return r+1; 
+        return l; // we can also return r+1 
     }
 }
