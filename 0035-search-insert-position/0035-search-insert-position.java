@@ -1,7 +1,7 @@
 class Solution {
     public int searchInsert(int[] arr, int target) {
         int n=arr.length;
-        int l=0, r=n-1,mid;
+        int l=0, r=n-1,mid=0;
         while(l<=r){
             mid=(l+r)/2;
             if(arr[mid]<target)
@@ -11,6 +11,6 @@ class Solution {
             if(arr[mid]==target)
                 return mid;
         }
-        return l;
+        return r+1; 
     }
 }
