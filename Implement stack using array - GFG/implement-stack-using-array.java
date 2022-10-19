@@ -63,10 +63,10 @@ class MyStack
     void push(int a)
 	{
 	    // Your code here
-	    if(top==999){
+	    if(top==999){ //if array is full
 	        return;
 	    }
-	    top++;
+	    top++; 
 	    arr[top]=a;
 	} 
 	
@@ -74,7 +74,7 @@ class MyStack
 	int pop()
 	{
         // Your code here
-        if(top==-1){
+        if(top==-1){ //if array is empty
             return -1;
         }
         int deletedVal=arr[top];
