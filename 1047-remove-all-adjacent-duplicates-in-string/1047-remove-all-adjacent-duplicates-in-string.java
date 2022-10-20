@@ -2,7 +2,7 @@ class Solution {
     public String removeDuplicates(String s) {
         int n=s.length();
         Stack<Character> st= new Stack<>();
-        for(int i=n-1;i>=0;i--){
+        for(int i=0;i<n;i++){
             if(!st.empty() && st.peek()==s.charAt(i)){
                 st.pop();
             }
@@ -12,7 +12,7 @@ class Solution {
         }
         String ans="";
         while(!st.empty()){
-            ans+=st.pop();
+            ans=st.pop()+ans;
         }
         return ans;
     }
