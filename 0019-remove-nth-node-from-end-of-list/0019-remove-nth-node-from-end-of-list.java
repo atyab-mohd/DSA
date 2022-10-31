@@ -18,7 +18,7 @@ class Solution {
             curr=curr.next;
         }
         n=total-n;
-        if(n==0) return head.next;
+        if(n==0) return head.next; //if n==0 that means we have to delete the head that's why returning head.next;
         ListNode prev=null;
         ListNode pos=head;
         for(int i=0;i<n;i++){
