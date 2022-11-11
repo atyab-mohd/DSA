@@ -37,12 +37,14 @@ class GfG
         for(int i=0;i<n;i++){
             sum+=arr[i];
             if(sum==0) maxi= i+1;
-            else{if(lmap.get(sum)!=null){
-                maxi= Math.max(maxi, i-lmap.get(sum));
-            }
             else{
-                lmap.put(sum,i);
-            }}
+                if(lmap.get(sum)!=null){
+                maxi= Math.max(maxi, i-lmap.get(sum));
+                }
+                else{
+                    lmap.put(sum,i);
+                }   
+            }
         }
         return maxi;
     }
