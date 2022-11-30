@@ -39,7 +39,7 @@ class GFG
 
 class solve{
     static String getBinary(int num){
-        StringBuilder sb= new StringBuilder();{
+        StringBuilder sb= new StringBuilder();
             while(num>0){
             int rem= num%2;
             if(rem==0) sb.append("0");
@@ -48,7 +48,6 @@ class solve{
             }
             sb=sb.reverse();
             return sb.toString();
-        }
     }
     
     //Function to generate binary numbers from 1 to N using a queue.
