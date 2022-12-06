@@ -136,10 +136,8 @@ class GFG
             for (int i = 0; i < size; i++) {
                 Node curr = q.poll();
                 temp.add(curr.data);
-                if (curr.left != null)
-                    q.add(curr.left);
-                if (curr.right != null)
-                    q.add(curr.right);
+                if (curr.left != null) q.add(curr.left);
+                if (curr.right != null) q.add(curr.right);
             }
             if(level % 2 == 0) Collections.reverse(temp);
             level++;
