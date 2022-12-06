@@ -123,80 +123,30 @@ public class GFG2
 
 class GFG
 {
-    //Function to store the zig zag order traversal of tree in a list.
 	ArrayList<Integer> zigZagTraversal(Node root)
 	{
 	    ArrayList<Integer> ans = new ArrayList<Integer>();
         if (root == null) return ans;
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<Node> q = new LinkedList<>();
         q.add(root);
-        // this variable helps to check if elements are to
-        // be added from left to right or right to left
-        boolean leftToRight = true;
         int level = 1;
         while (q.size() > 0) {
             int size = q.size();
-            // this arraylist is used to store element at
-            // current level
             ArrayList<Integer> temp = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 Node curr = q.poll();
+                temp.add(curr.data);
                 if (curr.left != null)
                     q.add(curr.left);
                 if (curr.right != null)
                     q.add(curr.right);
-                temp.add(curr.data);
             }
-            // if (leftToRight) // at current level,add element
-            //                  // from left to right to our
-            //                  // answer
-            // {
-            //     // do nothing
-            // }
             if(level % 2 == 0) Collections.reverse(temp);
             level++;
-            // we have to add element from to right to left
-            // and this can be done by reversing our temp
-            // arraylist
-            // else {
-            //     Collections.reverse(temp);
-            // }
-            // add element form temp arraylist to our ans
-            // arraylist
-            for (int i = 0; i < temp.size(); i++) {
+            for(int i = 0; i < temp.size(); i++){
                 ans.add(temp.get(i));
             }
-            // change the value of leftToRight from true to
-            // false or false to true for next iteration.
-            leftToRight = !(leftToRight);
         }
-        // return our ans arraylist
         return ans;
-	    
-	    //Add your code here.
-	   // ArrayList<Integer> ans = new ArrayList<>();
-	   // if(root == null) return ans;
-	   // Queue<Node> q = new LinkedList<>();
-	   // q.add(root);
-	   // int level = 1;
-	   // while(q.size()>0){
-	   //     int size = q.size();
-	   //     for(int i=0;i<size;i++){
-	   //         Node cur = q.poll();
-	   //         ans.add(cur.data);
-	   //         if(level % 2 == 0){
-	   //             if(cur.left != null) q.add(cur.left);
-	   //             if(cur.right != null) q.add(cur.right);
-	   //             //level++;
-	   //         }
-	   //         else{
-	   //             if(cur.right != null) q.add(cur.right);
-	   //             if(cur.left != null) q.add(cur.left);
-	   //             //level++;
-	   //         }
-	   //         level++;
-	   //     }
-	   // }
-	   // return ans;
 	}
 }
