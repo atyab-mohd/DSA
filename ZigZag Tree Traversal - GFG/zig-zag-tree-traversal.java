@@ -127,15 +127,13 @@ class GFG
 	ArrayList<Integer> zigZagTraversal(Node root)
 	{
 	    ArrayList<Integer> ans = new ArrayList<Integer>();
-        // if there is no element in the tree,return empty
-        // arraylist
-        if (root == null)
-            return ans;
+        if (root == null) return ans;
         Queue<Node> q = new LinkedList<Node>();
         q.add(root);
         // this variable helps to check if elements are to
         // be added from left to right or right to left
         boolean leftToRight = true;
+        int level = 1;
         while (q.size() > 0) {
             int size = q.size();
             // this arraylist is used to store element at
@@ -149,18 +147,20 @@ class GFG
                     q.add(curr.right);
                 temp.add(curr.data);
             }
-            if (leftToRight) // at current level,add element
-                             // from left to right to our
-                             // answer
-            {
-                // do nothing
-            }
+            // if (leftToRight) // at current level,add element
+            //                  // from left to right to our
+            //                  // answer
+            // {
+            //     // do nothing
+            // }
+            if(level % 2 == 0) Collections.reverse(temp);
+            level++;
             // we have to add element from to right to left
             // and this can be done by reversing our temp
             // arraylist
-            else {
-                Collections.reverse(temp);
-            }
+            // else {
+            //     Collections.reverse(temp);
+            // }
             // add element form temp arraylist to our ans
             // arraylist
             for (int i = 0; i < temp.size(); i++) {
