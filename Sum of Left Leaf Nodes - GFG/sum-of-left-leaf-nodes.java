@@ -111,25 +111,21 @@ class GFG
 
 
 class Solution{
-    int llsum(Node root, boolean leftChild){
+    int llsum(Node root, boolean left){
         if(root == null) return 0;
-        int l = llsum(root.left, true);
-        int r = llsum(root.right, false);
-        if(root.left == null && root.right == null && leftChild) return l+r+root.data;
-        return l+r;
+        int ls = llsum(root.left, true);
+        int rs = llsum(root.right, false);
+        if(root.left == null && root.right == null && left)
+            return ls + rs + root.data;
+        return ls + rs;
     }
 
     public int leftLeavesSum(Node root) 
     { 
         // Write your code here
-        // if(root == null) return 0;
-        // int ans=0;
-        // if(root.left == null && root.right == null) ans+= root.data;
-        // ans+=leftLeavesSum(root.left);
-        // //ans-=leftLeavesSum(root.right);
-        // return ans;
-        
         return llsum(root, false);
+        
+        
     } 
 
 }
