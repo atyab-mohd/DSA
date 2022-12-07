@@ -142,13 +142,11 @@ class Tree
                if(cur.left != null) q.add(cur.left);
                if(cur.right != null) q.add(cur.right);
            }
-           
            if(maxNodes < nodes.size()){
                maxNodes = nodes.size();
                ans = level;
            }
            level++;
-           //maxNodes = Math.max(maxNodes, nodes.size());
        }
        return ans;
     }
