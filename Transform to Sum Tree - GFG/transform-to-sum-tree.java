@@ -129,13 +129,12 @@ class Solution{
         if(root == null) return 0;
         int leftSum = getSum(root.left);
         int rightSum = getSum(root.right);
-        int totalSum = leftSum + rightSum + root.data;
+        int totalSum = root.data + leftSum + rightSum;
         root.data = leftSum + rightSum;
         return totalSum;
     }
     public void toSumTree(Node root){
          //add code here.
          getSum(root);
-         
     }
 }
