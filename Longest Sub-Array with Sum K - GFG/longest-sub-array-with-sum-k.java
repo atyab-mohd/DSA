@@ -59,9 +59,10 @@ class Solution{
             if(sum == K) maxLen = i+1;
             if(!hm.containsKey(sum)) hm.put(sum, i);
             if(hm.containsKey(sum - K)){
-                if(maxLen < (i - hm.get(sum - K))){ 
-                    maxLen = i - hm.get(sum - K);
-                }
+                maxLen = Math.max(maxLen, i - hm.get(sum-K));
+                // if(maxLen < (i - hm.get(sum - K))){ 
+                //     maxLen = i - hm.get(sum - K);
+                //}
             }
         }
         return maxLen;
