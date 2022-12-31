@@ -126,17 +126,17 @@ class Tree
     ArrayList<Integer> leftView(Node root)
     {
       // Your code here
-      ArrayList<Integer> ans= new ArrayList<>();
+      ArrayList<Integer> ans = new ArrayList<>();
       if(root == null) return ans;
-      Queue<Node> q= new LinkedList<>();
-      q.add(root);
-      while(q.size()>0){
-          int size= q.size();
+      Queue<Node> q = new LinkedList<>();
+      q.offer(root);
+      while(!q.isEmpty()){
+          int size = q.size();
           for(int i=0;i<size;i++){
-            Node cur= q.poll();
-            if(i==0) ans.add(cur.data);
-            if(cur.left != null) q.add(cur.left);
-            if(cur.right != null) q.add(cur.right);
+              Node curr = q.poll();
+              if(i == 0) ans.add(curr.data);
+              if(curr.left != null) q.offer(curr.left);
+              if(curr.right != null) q.offer(curr.right);
           }
       }
       return ans;
