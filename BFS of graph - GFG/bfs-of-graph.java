@@ -40,13 +40,13 @@ class Solution {
         ArrayList<Integer> ans = new ArrayList<>();
         boolean []visited = new boolean[V];
         Queue<Integer> q = new LinkedList<>();
-        q.add(0);
+        q.offer(0);
         visited[0] = true;
         while(!q.isEmpty()){
             int cur = q.poll();
             ans.add(cur);
-            int n = adj.get(cur).size();
-            for(int i=0;i<n;i++){
+            int size = adj.get(cur).size();
+            for(int i=0;i<size;i++){
                 int temp = adj.get(cur).get(i);
                 if(visited[temp] == false){
                     visited[temp] = true;
@@ -55,5 +55,24 @@ class Solution {
             }
         }
         return ans;
+        
+        // ArrayList<Integer> ans = new ArrayList<>();
+        // boolean []visited = new boolean[V];
+        // Queue<Integer> q = new LinkedList<>();
+        // q.add(0);
+        // visited[0] = true;
+        // while(!q.isEmpty()){
+        //     int cur = q.poll();
+        //     ans.add(cur);
+        //     int n = adj.get(cur).size();
+        //     for(int i=0;i<n;i++){
+        //         int temp = adj.get(cur).get(i);
+        //         if(visited[temp] == false){
+        //             visited[temp] = true;
+        //             q.add(temp);
+        //         }
+        //     }
+        // }
+        // return ans;
     }
 }
